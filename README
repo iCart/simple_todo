@@ -1,0 +1,15 @@
+INSTALL:
+========
+
+sudo ln -s /home/sylvain/Documents/github/todolist/todo.py /usr/local/bin/todo
+sudo ln -s /home/sylvain/Documents/github/todolist/done.py /usr/local/bin/done
+
+USAGE:
+======
+
+todo: opens your todo file for today in the editor
+
+done [start_date [end_date]]: show everything you've done since start_date, until end_date
+
+Everything at the start of your files is your todo list.
+Everything after the first line that starts with "DONE" is what you've accomplished.
