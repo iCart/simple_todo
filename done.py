@@ -3,13 +3,18 @@
 import os
 import sys
 from os.path import expanduser, isfile, join
+from datetime import datetime
 
 TODO_DIR = expanduser("~/todos/")
 TODO_PREFIX = "TODO-"
 
 os.chdir(TODO_DIR)
 
+def file_to_date(filename):
+    return datetime.strptime(filename[len(TODO_PREFIX):], '%Y-%m-%d').date()
+
 todo_files = [f for f in os.listdir(TODO_DIR) if isfile(join(f))]
+todo_files.sort(key=file_to_date)
 
 if len(sys.argv) > 1:
     start = 'TODO-'+sys.argv[1]
